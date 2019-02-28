@@ -62,7 +62,24 @@ update操作的时间复杂度为O(1),sumRange操作的时间复杂度为O(n)。
 
 ### 树状数组
 
-定义Lowbit函数，返回数字二进制表示的最后的1所代表的数字。
+#### 定义
+
+该算法定义先将数组中的每个元素的index（从1开始）用其二进制进行表示，然后将其转为一棵树。在更新某一节点时，将该节点及其所有父级节点都加上变化的值，在查询时，将该节点及其所有父级节点的值相加即为该节点之前的所有节点的和。树的节点的定义如下：
+
+- 更新时父级节点定义：某一节点的父节点为当前节点的二进制表示的最后一个1与自己相加对应的位置。如：
+    位置为1的节点的二进制为0001，它的最后一个1为0001，相加后得到0010即位置为2。
+    位置为2的节点的二进制为0010，它的最后一个1为0010，相加后得到0100即位置为4。
+    位置为5的节点的二进制为0101，它的最后一个1为0001，相加后得到0110即位置为6。
+    图示：![update](/images/binary_indexed_tree/update.jpg)
+- 查询与更新相反，某一节点的父级节点为当前节点的二进制表示减去二进制表示的最后一个1，如：
+    位置为8的节点的二进制为1000，它的最后一个1为1000， 相减后得到0000，小于1所以没有父节点。
+    位置为7的节点的二进制为0111，它的最后一个1为0001，相减后得到0110即位置为6。
+    位置为6的节点的二进制为0110，它的最后一个1为0010，相减后得到0100即位置为4。
+    图示：![query](/images/binary_indexed_tree/query.jpg)
+
+#### 实现
+
+##### 1. 定义Lowbit函数，返回数字二进制表示的最后的1所代表的数字。
 
 ```ts
 /**
@@ -72,6 +89,54 @@ function lowbit(num) {
   return num & (-num);
 }
 ```
+
+##### 2. 实现更新操作
+
+```ts
+/**
+* 更新节点
+* @param index 节点位置
+* @param delta 节点值的变化
+*/
+update(index: number, delta: number) {
+    while (index < this.sumArr.length) {
+        this.sumArr[index] += delta;
+        index += this.lowbit(index);
+    }
+}
+```
+其中
+```ts
+index += this.lowbit(index);
+```
+即是节点不断向上查找父级节点的过程。
+
+##### 3. 实现查询操作
+
+```ts
+/**
+* 前index个节点值的和
+* @param index 节点位置
+*/
+query(index: number) {
+    let sum = 0;
+    while(index > 0) {
+        sum += this.sumArr[index];
+        index -= this.lowbit(index);
+    }
+
+    return sum;
+}
+```
+
+其中
+```ts
+index -= this.lowbit(index);
+```
+
+即是节点不断查找父级节点的过程
+
+##### 4. 整体结构
 
 ```ts
 class BinaryIndexedTree {
