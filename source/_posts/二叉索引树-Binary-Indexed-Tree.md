@@ -5,10 +5,12 @@ tags:
     - 算法
     - 数据结构
     - leetcode
+keyword: 
+    - Binary Indexed Tree
     - Fenwick树
     - 二叉索引树
     - 树状数组
-    - Binary Indexed Tree
+description: 树状数组介绍及其实现
 ---
 
 ## 简介
@@ -79,7 +81,7 @@ update操作的时间复杂度为O(1),sumRange操作的时间复杂度为O(n)。
 
 #### 实现
 
-##### 1. 定义Lowbit函数，返回数字二进制表示的最后的1所代表的数字。
+##### 定义Lowbit函数，返回数字二进制表示的最后的1所代表的数字。
 
 ```ts
 /**
@@ -90,7 +92,7 @@ function lowbit(num) {
 }
 ```
 
-##### 2. 实现更新操作
+##### 实现更新操作
 
 ```ts
 /**
@@ -111,7 +113,7 @@ index += this.lowbit(index);
 ```
 即是节点不断向上查找父级节点的过程。
 
-##### 3. 实现查询操作
+##### 实现查询操作
 
 ```ts
 /**
@@ -136,7 +138,7 @@ index -= this.lowbit(index);
 
 即是节点不断查找父级节点的过程
 
-##### 4. 整体结构
+##### 整体结构
 
 ```ts
 class BinaryIndexedTree {
