@@ -4,9 +4,13 @@
 
 # Site
 title: 赵鹏的博客
-subtitle: 无它，唯手熟尔
+subtitle: 我亦无他，唯手熟尔
 description: 记录点滴
-keywords:
+keywords: 
+  - 博客
+  - 赵鹏
+  - 前端
+  - 算法
 author: 赵鹏
 language: zh-CN
 timezone:
