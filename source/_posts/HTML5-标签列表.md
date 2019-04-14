@@ -41,15 +41,15 @@ description: 整理Html5中所有的标签及标签作用
 |标签|描述|
 |---|---|
 |<body\>|代表HTML文档的内容。在文档中只能有一个<body\>元素|
-|<section\>![update](/images/icon/html5.png)|定义文档中的一个章节|
-|<nav\>![update](/images/icon/html5.png)|定义只包含导航链接的章节|
-|<article\>![update](/images/icon/html5.png)|定义可以独立于内容其余部分的额完整独立内容块|
-|<aside\>![update](/images/icon/html5.png)|定义和页面内容关联度较低的内容——如果被删除，剩下的内容依然合理|
+|<section\>![update](/images/icons/html5.png)|定义文档中的一个章节|
+|<nav\>![update](/images/icons/html5.png)|定义只包含导航链接的章节|
+|<article\>![update](/images/icons/html5.png)|定义可以独立于内容其余部分的额完整独立内容块|
+|<aside\>![update](/images/icons/html5.png)|定义和页面内容关联度较低的内容——如果被删除，剩下的内容依然合理|
 |<h1\>, <h2\>, <h3\>, <h4\>, <h5\>, <h6\>|标题元素实现了六层文档标题。标题元素简要地描述章节的主题|
-|<header\>![update](/images/icon/html5.png)|定义页面或章节的头部。它经常包含logo、页面标题和导航性的目录|
-|<footer\>![update](/images/icon/html5.png)|定义页面或章节的尾部。它经常包含版权信息、法律信息链接和反馈建议用的地址|
+|<header\>![update](/images/icons/html5.png)|定义页面或章节的头部。它经常包含logo、页面标题和导航性的目录|
+|<footer\>![update](/images/icons/html5.png)|定义页面或章节的尾部。它经常包含版权信息、法律信息链接和反馈建议用的地址|
 |<address\>|定义包含联系信息的一个章节|
-|<main\>![update](/images/icon/html5.png)|定义文档中主要或重要的内容|
+|<main\>![update](/images/icons/html5.png)|定义文档中主要或重要的内容|
 
 ## 组织内容
 
@@ -65,8 +65,8 @@ description: 整理Html5中所有的标签及标签作用
 |<dl\>|定义一个定义列表（一系列术语和其定义）|
 |<dt\>|代表一个由下一个<dd\>定义的术语|
 |<dd\>|代表出现在它之前的术语的定义|
-|<figure\>![update](/images/icon/html5.png)|代表一个和文档有关的图例|
-|<figcaption\>![update](/images/icon/html5.png)|代表一个图例的说明|
+|<figure\>![update](/images/icons/html5.png)|代表一个和文档有关的图例|
+|<figcaption\>![update](/images/icons/html5.png)|代表一个图例的说明|
 |<div\>|代表一个通用的容器，没有特殊含义|
 
 ## 文字形式
